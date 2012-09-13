@@ -32,15 +32,15 @@ class Map:
             self.camera.y = (self.map_height*32) - self.camera.h
    
     def generate_grid(self):
-        for row in range(50):
+        for row in range(self.map_height):
             self.grid.append([])
-            for column in range(40):
+            for column in range(self.map_width):
                 self.grid[row].append(2)
                 
     def generate_field(self):
         self.tiles = []
-        self.map_width = 50 
-        self.map_height = 40 
+        self.map_width = 100
+        self.map_height = 100
         self.generate_grid()
         self.grid[1][5] = 1
         for y in range(0, self.map_height):
