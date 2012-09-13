@@ -46,7 +46,7 @@ class Map:
         self.grid[1][5] = 1
         for y in range(0, self.map_height):
             for x in range(0, self.map_width):
-                tile_image = pygame.surface.Surface((64, 64))
+                tile_image = pygame.surface.Surface((self.block_width, self.block_height))
                 if self.grid[x][y] == 0:
                     maptile=MapTile(BLUE, x*self.block_width, y*self.block_height, self.block_width, self.block_height, 0)
                 elif self.grid[x][y] == 1:

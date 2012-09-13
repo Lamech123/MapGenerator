@@ -2,23 +2,20 @@ import pygame
 from Constants import WHITE, BLACK, BLUE, BRIGHTBLUE
 from string import Template
 
-
-
 # This class represents each block that will get knocked out by the ball
 # It derives from the "Sprite" class in Pygame
 class MapTile(pygame.sprite.Sprite):
  
     # Constructor. Pass in the color of the block, and its x and y position
-
     def __init__(self, color, x, y, block_width, block_height, text=0):
-        # Call the parent class (Sprite) constructor
 
+        # Call the parent class (Sprite) constructor
         pygame.sprite.Sprite.__init__(self)
+
         BASICFONT = pygame.font.Font('freesansbold.ttf', 11)
 
         # Create the image of the block of appropriate size
         # The width and height are sent as a list for the first parameter.
-
         self.image = pygame.Surface([block_width, block_height])
 
         # self.image.fill(white)
