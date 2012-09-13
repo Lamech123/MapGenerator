@@ -1,5 +1,6 @@
 import pygame
 import random
+from Grid import Grid
 from MapTile import MapTile
 from Constants import *
 
@@ -31,25 +32,20 @@ class Map:
             self.camera.y = 0
         if self.camera.y + self.camera.h >= self.map_height*self.block_height:
             self.camera.y = (self.map_height*self.block_height) - self.camera.h
-   
-    def generate_grid(self):
-        for row in range(self.map_height):
-            self.grid.append([])
-            for column in range(self.map_width):
-                self.grid[row].append(2)
                 
     def generate_field(self):
         self.tiles = []
-        self.map_width = 30
-        self.map_height = 30
-        self.generate_grid()
-        self.grid[1][5] = 1
+        self.map_width = 20
+        self.map_height = 20
+        grid = Grid(self.map_width, self.map_height, 0)
+        grid.generate_grid()
+        grid.grid[1][5] = 1
         for y in range(0, self.map_height):
             for x in range(0, self.map_width):
                 tile_image = pygame.surface.Surface((self.block_width, self.block_height))
-                if self.grid[x][y] == 0:
+                if grid.grid[x][y] == 0:
                     maptile=MapTile(BLUE, x*self.block_width, y*self.block_height, self.block_width, self.block_height, 0)
-                elif self.grid[x][y] == 1:
+                elif grid.grid[x][y] == 1:
                     maptile=MapTile(RED, x* self.block_width, y* self.block_height, self.block_width, self.block_height, "Titanic")
                 else:
                     maptile=MapTile(WHITE, x* self.block_width, y* self.block_height, self.block_width, self.block_height, 0)
