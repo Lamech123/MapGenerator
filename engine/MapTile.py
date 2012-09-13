@@ -2,9 +2,7 @@ import pygame
 from Constants import WHITE, BLACK, BLUE, BRIGHTBLUE
 from string import Template
 
-# Size of blocks
-block_width=32
-block_height=32
+
 
 # This class represents each block that will get knocked out by the ball
 # It derives from the "Sprite" class in Pygame

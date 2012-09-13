@@ -9,6 +9,7 @@ class Map:
         self.grid = []
         self.camera = pygame.Rect((0, 0), resolution)
         self.map_width, self.map_height = 0, 0
+        self.block_width, self.block_height = 64, 64
 
     def keyboard_scrolling(self):
         scroll_speed = 1
@@ -24,12 +25,12 @@ class Map:
 
         if self.camera.x <= 0:
             self.camera.x = 0
-        if self.camera.x + self.camera.w >= self.map_width*32:
-            self.camera.x = (self.map_width*32) - self.camera.w
+        if self.camera.x + self.camera.w >= self.map_width*self.block_width:
+            self.camera.x = (self.map_width*self.block_width) - self.camera.w
         if self.camera.y <= 0:
             self.camera.y = 0
-        if self.camera.y + self.camera.h >= self.map_height*32:
-            self.camera.y = (self.map_height*32) - self.camera.h
+        if self.camera.y + self.camera.h >= self.map_height*self.block_height:
+            self.camera.y = (self.map_height*self.block_height) - self.camera.h
    
     def generate_grid(self):
         for row in range(self.map_height):
@@ -39,23 +40,23 @@ class Map:
                 
     def generate_field(self):
         self.tiles = []
-        self.map_width = 100
-        self.map_height = 100
+        self.map_width = 30
+        self.map_height = 30
         self.generate_grid()
         self.grid[1][5] = 1
         for y in range(0, self.map_height):
             for x in range(0, self.map_width):
-                tile_image = pygame.surface.Surface((32, 32))
+                tile_image = pygame.surface.Surface((64, 64))
                 if self.grid[x][y] == 0:
-                    maptile=MapTile(BLUE, x*32, y*32, 32, 32, 0)
+                    maptile=MapTile(BLUE, x*self.block_width, y*self.block_height, self.block_width, self.block_height, 0)
                 elif self.grid[x][y] == 1:
-                    maptile=MapTile(RED, x*32, y*32, 32, 32, "Titanic")
+                    maptile=MapTile(RED, x* self.block_width, y* self.block_height, self.block_width, self.block_height, "Titanic")
                 else:
-                    maptile=MapTile(WHITE, x*32, y*32, 32, 32, 0)
+                    maptile=MapTile(WHITE, x* self.block_width, y* self.block_height, self.block_width, self.block_height, 0)
                 self.tiles.append(maptile)       
 
     def draw(self, surface):
         #self.keyboard_scrolling()
         for tile in self.tiles:
             if self.camera.colliderect(tile):
-                surface.blit(tile.image, (tile.rect.x - self.camera.x, tile.rect.y - self.camera.y), (0, 0, 32, 32))
+                surface.blit(tile.image, (tile.rect.x - self.camera.x, tile.rect.y - self.camera.y), (0, 0, self.block_width, self.block_height))
