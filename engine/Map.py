@@ -1,6 +1,7 @@
 import pygame
 import random
 from Grid import Grid
+from Data import Data
 from MapTile import MapTile
 from Constants import *
 
@@ -34,22 +35,39 @@ class Map:
             self.camera.y = (self.map_height*self.block_height) - self.camera.h
                 
     def generate_field(self):
+        self.gridmatch = {}
+        self.datum = []
         self.tiles = []
         self.map_width = 20
         self.map_height = 20
+
+        # Create a 2 dimensional list that will act as a data grid for the Map
         grid = Grid(self.map_width, self.map_height, 0)
         grid.generate_grid()
-        grid.grid[1][5] = 1
+
+        #Creat a data point
+#        data1 = Data(1,5,GREEN, "Titanic", "a1")
+#        self.datum.append(data1)
+#        data2 = Data(2,7, RED, "Coal Strike", "a2")
+#        self.datum.append(data2)
+#
+#        for data in self.datum:
+#            grid.grid[data.x][data.y] = data.gridNumber
+
+
+        grid.grid[1][5] = "a1"
+        grid.grid[2][6] = "a2"
+        grid.grid[5][19] = "a3"
+        self.gridmatch = { "a1":"Titanic", "a2": "Coal Strike", "a3": "Sinking"}
+
         for y in range(0, self.map_height):
             for x in range(0, self.map_width):
                 tile_image = pygame.surface.Surface((self.block_width, self.block_height))
                 if grid.grid[x][y] == 0:
                     maptile=MapTile(BLACK, x*self.block_width, y*self.block_height, self.block_width, self.block_height, 0)
-                elif grid.grid[x][y] == 1:
-                    maptile=MapTile(RED, x* self.block_width, y* self.block_height, self.block_width, self.block_height, "Titanic")
-                else:
-                    maptile=MapTile(WHITE, x* self.block_width, y* self.block_height, self.block_width, self.block_height, 0)
-                self.tiles.append(maptile)       
+                elif self.gridmatch.has_key(grid.grid[x][y]):
+                    maptile=MapTile(RED, x* self.block_width, y* self.block_height, self.block_width, self.block_height, self.gridmatch.get(grid.grid[x][y]))
+                self.tiles.append(maptile)
 
     def draw(self, surface):
         #self.keyboard_scrolling()
