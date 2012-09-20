@@ -1,6 +1,7 @@
 import pygame
 from Constants import WHITE, BLACK, BLUE, BRIGHTBLUE
 from string import Template
+from engine.Wrap import render_textrect
 
 # This class represents each block that will get knocked out by the ball
 # It derives from the "Sprite" class in Pygame
@@ -12,7 +13,7 @@ class MapTile(pygame.sprite.Sprite):
         # Call the parent class (Sprite) constructor
         pygame.sprite.Sprite.__init__(self)
 
-        BASICFONT = pygame.font.Font('freesansbold.ttf', 11)
+        BASICFONT = pygame.font.Font('freesansbold.ttf', 12)
 
         # Create the image of the block of appropriate size
         # The width and height are sent as a list for the first parameter.
@@ -32,7 +33,8 @@ class MapTile(pygame.sprite.Sprite):
         if text == 0:
             self.msg_box = BASICFONT.render('%d, %d' %(x/block_width,y/block_height), True, BLACK)
         else:
-            self.msg_box = BASICFONT.render('%s' % text, True, BLACK)
+            self.msg_box = render_textrect(text, BASICFONT, self.rect, BLACK, WHITE, 0)
+            #self.msg_box = BASICFONT.render('%s' % text, True, BLACK)
         self.image.blit(self.msg_box, self.txt_pos)
 
         # Move the top left of the rectangle to x,y.

@@ -1,3 +1,7 @@
+#!/usr/bin/python
+# -*- coding: iso-8859-15 -*-
+
+
 import pygame
 import random
 from Grid import Grid
@@ -11,7 +15,7 @@ class Map:
         self.grid = []
         self.camera = pygame.Rect((0, 0), resolution)
         self.map_width, self.map_height = 0, 0
-        self.block_width, self.block_height = 64, 64
+        self.block_width, self.block_height = 140, 140
 
     def keyboard_scrolling(self):
         scroll_speed = 1
@@ -45,29 +49,53 @@ class Map:
         grid = Grid(self.map_height, self.map_width, 0)
         grid.generate_grid()
 
-        grid.grid[0][19] = "a1"
-        grid.grid[0][18] = "a2"
-        grid.grid[0][17] = "a3"
-        grid.grid[0][16] = "a4"
-        grid.grid[0][15] = "a5"
-        grid.grid[0][14] = "a6"
-        grid.grid[0][13] = "a7"
-        grid.grid[0][12] = "a8"
-        grid.grid[0][11] = "a9"
-        grid.grid[0][10] = "a10"
-        grid.grid[0][9] = "a11"
-        grid.grid[0][8] = "a12"
-        grid.grid[0][7] = "a13"
-        grid.grid[0][6] = "a14"
-        grid.grid[0][5] = "a15"
-        grid.grid[0][4] = "a16"
-        grid.grid[0][3] = "a17"
-        grid.grid[0][2] = "a18"
-        grid.grid[0][1] = "a19"
-
-
-        self.gridmatch = { "a1":"1977", "a2": "1978", "a3": "1979","a4":"1980", "a5": "1981", "a6": "1982","a7":"1983", "a8": "1984", "a9": "1985","a10":"1986", "a11": "1987", "a12": "1988","a10":"1989", "a11": "1990", "a12": "1991","a13":"1992", "a14": "1993", "a15": "1994","a16":"1995", "a17": "1996", "a18": "1997", "a19":"1998"}
-
+        grid.grid[2][0] = "c1"
+        grid.grid[1][0] = "b1"
+        grid.grid[0][20] = "a1"
+        grid.grid[0][19] = "a2"
+        grid.grid[0][18] = "a3"
+        grid.grid[0][17] = "a4"
+        grid.grid[0][16] = "a5"
+        grid.grid[0][15] = "a6"
+        grid.grid[0][14] = "a7"
+        grid.grid[0][13] = "a8"
+        grid.grid[0][12] = "a9"
+        grid.grid[0][11] = "a10"
+        grid.grid[0][10] = "a11"
+        grid.grid[0][9] = "a12"
+        grid.grid[0][8] = "a13"
+        grid.grid[0][7] = "a14"
+        grid.grid[0][6] = "a15"
+        grid.grid[0][5] = "a16"
+        grid.grid[0][4] = "a17"
+        grid.grid[0][3] = "a18"
+        grid.grid[0][2] = "a19"
+        grid.grid[0][1] = "a20"
+        grid.grid[0][0] = "a21"
+        self.gridmatch = {
+        "a1" :"Jane is living with her Aunt Reed and cousins at Gateshead, being bullied and tormented by John Reed in particular.",
+        "a2" :"Jane finally can't take it anymore and fights back against John.",
+        "a3" :"Jane is locked in the 'red-room,' the bedchamber in which her uncle died, as a punishment, and has a traumatic, eerie experience.",
+        "a4" :"Jane is sent to Lowood Institute, a religious school for orphan girls.",
+        "a5" :"Jane studies hard and eventually becomes a teacher at Lowood.",
+        "a6" :"Jane gets a spot of wanderlust and applies to be a governess.",
+        "a7" :"Jane gets a job at Thornfield as the governess to a little French girl named Adèle Varens.",
+        "a8" :"Jane meets the master of Thornfield, Mr. Rochester, and quickly falls in love with him.",
+        "a9" :"Jane has a series of eerie experiences related to a mysterious locked room on the third floor of Thornfield and a creepy woman’s laugh that she hears coming from behind the door.",
+        "a10" :"Mr. Rochester teases Jane by pretending to be interested in a local debutante, Blanche Ingram.",
+        "a11" :"Jane goes back to Gateshead to tend Mrs. Reed on her deathbed.",
+        "a12" :"Jane returns to Thornfield and eventually becomes engaged to Mr. Rochester.",
+        "a13" :"Jane and Rochester’s wedding is interrupted by two men who reveal that Rochester is already married.",
+        "a14" :"Jane leaves Thornfield and wanders alone on the moors, friendless and starving.",
+        "a15" :"Arriving at Moor House, Jane is taken in by Diana, Mary, and St. John Rivers.",
+        "a16" :"After regaining her strength, with St. John’s help, Jane gets a job as a teacher in a village school in Morton and moves to her own cottage.",
+        "a17" :"Jane discovers that she and the Rivers siblings are cousins and that she has inherited £20,000.",
+        "a18" :"St. John Rivers asks Jane to marry him and go with him to India on a missionary trip.",
+        "a19" :"Jane mysteriously hears Rochester calling her from a great distance.",
+        "a20" :"Jane returns to Thornfield and marries Mr. Rochester.",
+        "a21" :"Jane and Rochester have a son.",
+        "b1" : "Rochester",
+        "c1" :"Bertha Mason"}
         for y in range(0, self.map_height):
             for x in range(0, self.map_width):
                 tile_image = pygame.surface.Surface((self.block_width, self.block_height))
