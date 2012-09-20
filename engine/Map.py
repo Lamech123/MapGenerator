@@ -39,26 +39,34 @@ class Map:
         self.datum = []
         self.tiles = []
         self.map_width = 20
-        self.map_height = 20
+        self.map_height = 21
 
         # Create a 2 dimensional list that will act as a data grid for the Map
-        grid = Grid(self.map_width, self.map_height, 0)
+        grid = Grid(self.map_height, self.map_width, 0)
         grid.generate_grid()
 
-        #Creat a data point
-#        data1 = Data(1,5,GREEN, "Titanic", "a1")
-#        self.datum.append(data1)
-#        data2 = Data(2,7, RED, "Coal Strike", "a2")
-#        self.datum.append(data2)
-#
-#        for data in self.datum:
-#            grid.grid[data.x][data.y] = data.gridNumber
+        grid.grid[0][19] = "a1"
+        grid.grid[0][18] = "a2"
+        grid.grid[0][17] = "a3"
+        grid.grid[0][16] = "a4"
+        grid.grid[0][15] = "a5"
+        grid.grid[0][14] = "a6"
+        grid.grid[0][13] = "a7"
+        grid.grid[0][12] = "a8"
+        grid.grid[0][11] = "a9"
+        grid.grid[0][10] = "a10"
+        grid.grid[0][9] = "a11"
+        grid.grid[0][8] = "a12"
+        grid.grid[0][7] = "a13"
+        grid.grid[0][6] = "a14"
+        grid.grid[0][5] = "a15"
+        grid.grid[0][4] = "a16"
+        grid.grid[0][3] = "a17"
+        grid.grid[0][2] = "a18"
+        grid.grid[0][1] = "a19"
 
 
-        grid.grid[1][5] = "a1"
-        grid.grid[2][6] = "a2"
-        grid.grid[5][19] = "a3"
-        self.gridmatch = { "a1":"Titanic", "a2": "Coal Strike", "a3": "Sinking"}
+        self.gridmatch = { "a1":"1977", "a2": "1978", "a3": "1979","a4":"1980", "a5": "1981", "a6": "1982","a7":"1983", "a8": "1984", "a9": "1985","a10":"1986", "a11": "1987", "a12": "1988","a10":"1989", "a11": "1990", "a12": "1991","a13":"1992", "a14": "1993", "a15": "1994","a16":"1995", "a17": "1996", "a18": "1997", "a19":"1998"}
 
         for y in range(0, self.map_height):
             for x in range(0, self.map_width):
@@ -66,7 +74,7 @@ class Map:
                 if grid.grid[x][y] == 0:
                     maptile=MapTile(BLACK, x*self.block_width, y*self.block_height, self.block_width, self.block_height, 0)
                 elif self.gridmatch.has_key(grid.grid[x][y]):
-                    maptile=MapTile(RED, x* self.block_width, y* self.block_height, self.block_width, self.block_height, self.gridmatch.get(grid.grid[x][y]))
+                    maptile=MapTile(WHITE, x* self.block_width, y* self.block_height, self.block_width, self.block_height, self.gridmatch.get(grid.grid[x][y]))
                 self.tiles.append(maptile)
 
     def draw(self, surface):

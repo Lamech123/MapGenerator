@@ -8,4 +8,13 @@ class Data():
         self.y = y
         self.color = color
         self.text = text
-        self.gridNumber = gridNumber
+
+        #Create a data point
+
+#data1 = Data(1,5,GREEN, "Titanic", "a1")
+#self.datum.append(data1)
+#data2 = Data(2,7, RED, "Coal Strike", "a2")
+#self.datum.append(data2)
+#
+#for data in self.datum:
+#    grid.grid[data.x][data.y] = data.gridNumber
