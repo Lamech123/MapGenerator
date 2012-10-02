@@ -42,36 +42,13 @@ class Map:
         self.gridmatch = {}
         self.datum = []
         self.tiles = []
-        self.map_width = 20
+        self.map_width = 5
         self.map_height = 21
 
         # Create a 2 dimensional list that will act as a data grid for the Map
         grid = Grid(self.map_height, self.map_width, 0)
-        grid.generate_grid()
+        grid.load_grid()
 
-        grid.grid[2][0] = "c1"
-        grid.grid[1][0] = "b1"
-        grid.grid[0][20] = "a1"
-        grid.grid[0][19] = "a2"
-        grid.grid[0][18] = "a3"
-        grid.grid[0][17] = "a4"
-        grid.grid[0][16] = "a5"
-        grid.grid[0][15] = "a6"
-        grid.grid[0][14] = "a7"
-        grid.grid[0][13] = "a8"
-        grid.grid[0][12] = "a9"
-        grid.grid[0][11] = "a10"
-        grid.grid[0][10] = "a11"
-        grid.grid[0][9] = "a12"
-        grid.grid[0][8] = "a13"
-        grid.grid[0][7] = "a14"
-        grid.grid[0][6] = "a15"
-        grid.grid[0][5] = "a16"
-        grid.grid[0][4] = "a17"
-        grid.grid[0][3] = "a18"
-        grid.grid[0][2] = "a19"
-        grid.grid[0][1] = "a20"
-        grid.grid[0][0] = "a21"
         self.gridmatch = {
         "a1" :"Jane is living with her Aunt Reed and cousins at Gateshead, being bullied and tormented by John Reed in particular.",
         "a2" :"Jane finally can't take it anymore and fights back against John.",
@@ -96,6 +73,7 @@ class Map:
         "a21" :"Jane and Rochester have a son.",
         "b1" : "Rochester",
         "c1" :"Bertha Mason"}
+
         for y in range(0, self.map_height):
             for x in range(0, self.map_width):
                 tile_image = pygame.surface.Surface((self.block_width, self.block_height))

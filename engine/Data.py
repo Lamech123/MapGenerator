@@ -2,7 +2,7 @@
 class Data():
 
     # Constructor. Pass in the x, y, color and text of the Data
-    def __init__(self, x, y, color, text, gridNumber):
+    def __init__(self, x, y, color, text):
 
         self.x = x
         self.y = y
@@ -11,10 +11,10 @@ class Data():
 
         #Create a data point
 
-#data1 = Data(1,5,GREEN, "Titanic", "a1")
-#self.datum.append(data1)
-#data2 = Data(2,7, RED, "Coal Strike", "a2")
-#self.datum.append(data2)
-#
-#for data in self.datum:
-#    grid.grid[data.x][data.y] = data.gridNumber
+        #data1 = Data(1,5,GREEN, "Titanic", "a1")
+        #self.datum.append(data1)
+        #data2 = Data(2,7, RED, "Coal Strike", "a2")
+        #self.datum.append(data2)
+        #
+        #for data in self.datum:
+        #    grid.grid[data.x][data.y] = data.gridNumber

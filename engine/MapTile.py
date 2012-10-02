@@ -3,11 +3,11 @@ from Constants import WHITE, BLACK, BLUE, BRIGHTBLUE
 from string import Template
 from engine.Wrap import render_textrect
 
-# This class represents each block that will get knocked out by the ball
+# This class represents each individual tile
 # It derives from the "Sprite" class in Pygame
 class MapTile(pygame.sprite.Sprite):
  
-    # Constructor. Pass in the color of the block, and its x and y position
+    # Constructor. Pass in the color of the block, it's x/y values, block dimensions, and text
     def __init__(self, color, x, y, block_width, block_height, text=0):
 
         # Call the parent class (Sprite) constructor
@@ -44,3 +44,17 @@ class MapTile(pygame.sprite.Sprite):
 
         #self.rect.x = x
         #self.rect.y = y
+
+    def setCords(self,x,y):
+        self.rect.topleft = x, y
+
+    def pressed(self,mouse):
+        if mouse[0] > self.rect.topleft[0]:
+            if mouse[1] > self.rect.topleft[1]:
+                if mouse[0] < self.rect.bottomright[0]:
+                    if mouse[1] < self.rect.bottomright[1]:
+                        return True
+                    else: return False
+                else: return False
+            else: return False
+        else: return False
