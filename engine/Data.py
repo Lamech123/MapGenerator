@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: iso-8859-15 -*-
+
 # This class represents a data unit that will be entered into the tile blocks as dictated by their coordinates
 class Data():
 
@@ -9,12 +12,8 @@ class Data():
         self.color = color
         self.text = text
 
-        #Create a data point
+    def __str__(self):
+        return "%s , %s, %s, %s" % (self.x, self.y, self.color, self.text)
 
-        #data1 = Data(1,5,GREEN, "Titanic", "a1")
-        #self.datum.append(data1)
-        #data2 = Data(2,7, RED, "Coal Strike", "a2")
-        #self.datum.append(data2)
-        #
-        #for data in self.datum:
-        #    grid.grid[data.x][data.y] = data.gridNumber
+
+

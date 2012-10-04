@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-15 -*-
 
-
 import pygame
 import random
 from Grid import Grid
@@ -12,7 +11,7 @@ from Constants import *
 class Map:
     def __init__(self, resolution):
         self.tiles = []
-        self.grid = []
+        self.block_list = pygame.sprite.RenderPlain()
         self.camera = pygame.Rect((0, 0), resolution)
         self.map_width, self.map_height = 0, 0
         self.block_width, self.block_height = 140, 140
@@ -38,12 +37,10 @@ class Map:
         if self.camera.y + self.camera.h >= self.map_height*self.block_height:
             self.camera.y = (self.map_height*self.block_height) - self.camera.h
                 
-    def generate_field(self):
+    def generate_field(self, width, height):
         self.gridmatch = {}
-        self.datum = []
-        self.tiles = []
-        self.map_width = 5
-        self.map_height = 21
+        self.map_width = width
+        self.map_height = height
 
         # Create a 2 dimensional list that will act as a data grid for the Map
         grid = Grid(self.map_height, self.map_width, 0)
@@ -81,10 +78,11 @@ class Map:
                     maptile=MapTile(BLACK, x*self.block_width, y*self.block_height, self.block_width, self.block_height, 0)
                 elif self.gridmatch.has_key(grid.grid[x][y]):
                     maptile=MapTile(WHITE, x* self.block_width, y* self.block_height, self.block_width, self.block_height, self.gridmatch.get(grid.grid[x][y]))
-                self.tiles.append(maptile)
+                #self.tiles.append(maptile)
+                self.block_list.add(maptile)
 
     def draw(self, surface):
         #self.keyboard_scrolling()
-        for tile in self.tiles:
+        for tile in self.block_list:
             if self.camera.colliderect(tile):
                 surface.blit(tile.image, (tile.rect.x - self.camera.x, tile.rect.y - self.camera.y), (0, 0, self.block_width, self.block_height))

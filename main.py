@@ -1,6 +1,6 @@
-import pygame
-from engine.Map import Map
-from engine.Constants import *
+#import pygame
+#from engine.Map import Map
+#from engine.Constants import *
 WINDOWWIDTH = 640 
 WINDOWHEIGHT = 640
 EXTRAW = 200
@@ -14,7 +14,7 @@ def main():
     running = True
 
     map1 = Map(resolution)
-    map1.generate_field()
+    map1.generate_field(5, 21)
 
     while running:
 
@@ -35,9 +35,30 @@ def main():
                 pos = pygame.mouse.get_pos()
 
         map1.keyboard_scrolling()
+        map1.block_list.update()
         map1.draw(screen)
         pygame.display.flip()
 
 if __name__ == "__main__":
-    main()
-    pygame.quit()
+
+    #main()
+    #pygame.quit()
+
+    import csv
+    from engine.Record import Record
+    from engine.Data import Data
+
+
+    def creader(file):
+        return csv.reader(open(file,"rb"))
+
+    cr = creader("jane.csv")
+
+    print cr
+
+    record1 = Record(cr)
+
+    print record1
+
+
+
