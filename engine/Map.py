@@ -76,7 +76,8 @@ class Map:
                 tile_image = pygame.surface.Surface((self.block_width, self.block_height))
                 if grid.grid[x][y] == 0:
                     maptile=MapTile(BLACK, x*self.block_width, y*self.block_height, self.block_width, self.block_height, 0)
-                elif self.gridmatch.has_key(grid.grid[x][y]):
+                #elif self.gridmatch.has_key(grid.grid[x][y]):
+                elif grid.grid[x]
                     maptile=MapTile(WHITE, x* self.block_width, y* self.block_height, self.block_width, self.block_height, self.gridmatch.get(grid.grid[x][y]))
                 #self.tiles.append(maptile)
                 self.block_list.add(maptile)

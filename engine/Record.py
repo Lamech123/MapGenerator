@@ -14,7 +14,7 @@ class Record(object):
         self.record = []
 
         for row in self.csv_file:
-            data = Data(row[0], row[1], row[2], row[3])
+            data = Data(row[0], row[1], row[2], row[3], row[4])
             self.record.append(data)
 
     def __str__(self):

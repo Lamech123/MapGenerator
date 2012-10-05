@@ -1,24 +1,24 @@
-x,y,color,text
-0,0,black,"Jane is living with her Aunt Reed and cousins at Gateshead, being bullied and tormented by John Reed in particular."
-0,1,black,Jane finally can't take it anymore and fights back against John.
-0,2,black,"Jane is locked in the 'red-room,' the bedchamber in which her uncle died, as a punishment, and has a traumatic, eerie experience."
-0,3,black,"Jane is sent to Lowood Institute, a religious school for orphan girls."
-0,4,black,Jane studies hard and eventually becomes a teacher at Lowood.
-0,5,black,Jane gets a spot of wanderlust and applies to be a governess.
-0,6,black,Jane gets a job at Thornfield as the governess to a little French girl named Adèle Varens.
-0,7,black,"Jane meets the master of Thornfield, Mr. Rochester, and quickly falls in love with him."
-0,8,black,"Jane has a series of eerie experiences related to a mysterious locked room on the third floor of Thornfield and a creepy woman’s laugh that she hears coming from behind the door.,"
-0,9,black,"Mr. Rochester teases Jane by pretending to be interested in a local debutante, Blanche Ingram."
-0,10,black,Jane goes back to Gateshead to tend Mrs. Reed on her deathbed.
-0,11,black,Jane returns to Thornfield and eventually becomes engaged to Mr. Rochester.
-0,12,black,Jane and Rochester’s wedding is interrupted by two men who reveal that Rochester is already married.
-0,13,black,"Jane leaves Thornfield and wanders alone on the moors, friendless and starving."
-0,14,black,"Arriving at Moor House, Jane is taken in by Diana, Mary, and St. John Rivers."
-0,15,black,"After regaining her strength, with St. John’s help, Jane gets a job as a teacher in a village school in Morton and moves to her own cottage."
-0,16,black,"Jane discovers that she and the Rivers siblings are cousins and that she has inherited £20,000."
-0,17,black,St. John Rivers asks Jane to marry him and go with him to India on a missionary trip.
-0,18,black,Jane mysteriously hears Rochester calling her from a great distance.
-0,19,black,Jane returns to Thornfield and marries Mr. Rochester.
-0,20,black,Jane and Rochester have a son.
-1,0,black,Rochester
-2,0,black,Bertha Mason
+name,x,y,color,text
+a1,0,0,black,"Jane is living with her Aunt Reed and cousins at Gateshead, being bullied and tormented by John Reed in particular."
+a2,0,1,black,Jane finally can't take it anymore and fights back against John.
+a3,0,2,black,"Jane is locked in the 'red-room,' the bedchamber in which her uncle died, as a punishment, and has a traumatic, eerie experience."
+a4,0,3,black,"Jane is sent to Lowood Institute, a religious school for orphan girls."
+a5,0,4,black,Jane studies hard and eventually becomes a teacher at Lowood.
+a6,0,5,black,Jane gets a spot of wanderlust and applies to be a governess.
+a7,0,6,black,Jane gets a job at Thornfield as the governess to a little French girl named Adèle Varens.
+a8,0,7,black,"Jane meets the master of Thornfield, Mr. Rochester, and quickly falls in love with him."
+a9,0,8,black,"Jane has a series of eerie experiences related to a mysterious locked room on the third floor of Thornfield and a creepy woman’s laugh that she hears coming from behind the door.,"
+a10,0,9,black,"Mr. Rochester teases Jane by pretending to be interested in a local debutante, Blanche Ingram."
+a11,0,10,black,Jane goes back to Gateshead to tend Mrs. Reed on her deathbed.
+a12,0,11,black,Jane returns to Thornfield and eventually becomes engaged to Mr. Rochester.
+a13,0,12,black,Jane and Rochester’s wedding is interrupted by two men who reveal that Rochester is already married.
+a14,0,13,black,"Jane leaves Thornfield and wanders alone on the moors, friendless and starving."
+a15,0,14,black,"Arriving at Moor House, Jane is taken in by Diana, Mary, and St. John Rivers."
+a16,0,15,black,"After regaining her strength, with St. John’s help, Jane gets a job as a teacher in a village school in Morton and moves to her own cottage."
+a17,0,16,black,"Jane discovers that she and the Rivers siblings are cousins and that she has inherited £20,000."
+a18,0,17,black,St. John Rivers asks Jane to marry him and go with him to India on a missionary trip.
+a19,0,18,black,Jane mysteriously hears Rochester calling her from a great distance.
+a20,0,19,black,Jane returns to Thornfield and marries Mr. Rochester.
+a21,0,20,black,Jane and Rochester have a son.
+b1,1,0,black,Rochester
+c1,2,0,black,Bertha Mason

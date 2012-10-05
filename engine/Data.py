@@ -5,15 +5,16 @@
 class Data():
 
     # Constructor. Pass in the x, y, color and text of the Data
-    def __init__(self, x, y, color, text):
+    def __init__(self, name, x, y, color, text):
 
+        self.name = name
         self.x = x
         self.y = y
         self.color = color
         self.text = text
 
     def __str__(self):
-        return "%s , %s, %s, %s" % (self.x, self.y, self.color, self.text)
+        return "%s, %s, %s, %s, %s" % (self.name, self.x, self.y, self.color, self.text)
 
 
 
